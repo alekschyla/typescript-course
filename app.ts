@@ -1,23 +1,18 @@
-// array
-let hobbies: any[] = ['cooking', 'reading'];
-hobbies = [100];
-//hobbies = 100; - error
+//functions
+let myName: string = 'Ola';
 
-
-//tuples
-let address: [string, number] = ['Superstreet', 99];
-
-//enum
-enum Color {
-    Gray, //0
-    Green = 100, //1
-    Blue //2
+function returnMyName(): string {
+    return myName;
 }
-let myColor: Color = Color.Blue;
-console.log(myColor);
+console.log(returnMyName());
 
-//any
-let car: any = "BMW";
-console.log(car);
-car = {brand: "BMW", series: 3};
-console.log(car);
+//void - error when something is returned
+function sayHello(): void {
+    console.log('Hello');
+}
+
+//argument types
+function multiply(value1: number, value2: number): number {
+    return value1 * value2;
+}
+console.log(multiply( 2, 3));
