@@ -1,12 +1,13 @@
-//function types
-function sayHello(): void {
-    console.log('Hello');
-}
-function multiply(value1: number, value2: number): number {
-    return value1 * value2;
-}
+//objects
+let userData: {name: string, age: number} = {
+    name: 'Ola',
+    age: 24,
+};
 
-let myMultiply: (val1: number, val2: number) => number;
-//myMultiply = sayHello; - error
-myMultiply = multiply;
-console.log(myMultiply(5, 2));
+//complex object
+let complex: {data: number[], output: (all: boolean) => number[] } = {
+    data: [20, 30, 40],
+    output: function (all: boolean): number[] {
+        return this.data;
+    }
+};
