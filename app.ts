@@ -8,3 +8,8 @@ let finalValue = 30;
 if (typeof  finalValue == "number") {
     console.log('Final Value is a number');
 }
+
+// never type
+function neverReturns(): never {
+    throw new Error('An error');
+}
