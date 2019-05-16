@@ -23,3 +23,29 @@ console.log(person);
 console.log(person.name, person.username);
 person.printAge();
 //person.setType('Cool');
+
+class Ola extends Person {
+    //name = 'Ola';
+
+    constructor(username: string) {
+        super("Ola", username);
+        this.age = 24;
+    }
+
+}
+
+const ola = new Ola("ola");
+console.log(ola);
+
+
+
+
+
+
+
+
+
+
+
+
+
