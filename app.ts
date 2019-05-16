@@ -1,26 +1,25 @@
-// union types
-let myRealAge: number | string = 27;
-myRealAge = '27';
-//myRealAge = true; - error
+class Person {
+    name: string;
+    private type: string;
+    protected age: number = 21;
 
-// check types
-let finalValue = 30;
-if (typeof  finalValue == "number") {
-    console.log('Final Value is a number');
+    constructor(name: string, public username: string) {
+        this.name = name;
+    }
+
+    printAge() {
+        console.log(this.age);
+        this.setType('Cool');
+    }
+
+    private setType (type: string) {
+        this.type = type;
+        console.log(this.type);
+    }
 }
 
-// never type - TypeScript 2.0
-function neverReturns(): never {
-    throw new Error('An error');
-}
-
-// Nullable type - TypeScript 2.0
-let canBeNull: number | null = 12;
-canBeNull = null;
-
-let canAlsoBeNull;
-canAlsoBeNull = null;
-
-let canThisBeAny: number = null;
-canThisBeAny = 12;
-
+const person = new Person('Kate', 'Katie1995');
+console.log(person);
+console.log(person.name, person.username);
+person.printAge();
+//person.setType('Cool');
