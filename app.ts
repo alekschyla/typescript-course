@@ -1,7 +1,7 @@
 // Private Constructors
 class OnlyOne {
     private static instance: OnlyOne;
-    private constructor (public name: string) {}
+    private constructor (public readonly name: string) {}
 
     static getInstance() {
         if (!OnlyOne.instance) {
@@ -12,9 +12,13 @@ class OnlyOne {
 }
 
 
-let wrong = new OnlyOne;
+//let wrong = new OnlyOne;
 let right = OnlyOne.getInstance();
-console.log(wrong, right);
+console.log(right);
+console.log(right.name);
+right.name = 'Something else';
+console.log(right.name);
+
 
 
 
