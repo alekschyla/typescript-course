@@ -1,25 +1,13 @@
-class Plant {
-    private _species: string = "Default";
-
-    get species () {
-        return this._species;
-    }
-
-    set species(value: string) {
-        if (value.length > 3) {
-            this._species = value;
-        } else {
-            this._species = "Default";
-        }
+// Static properties and methods
+class Helpers {
+    static PI: number = 3.14;
+    static calcCircumference(diameter: number): number {
+        return this.PI * diameter;
     }
 }
 
-let plant = new Plant();
-console.log(plant.species);
-plant.species = "AB";
-console.log(plant.species);
-plant.species = "Rose";
-console.log(plant.species);
+console.log(Helpers.PI);
+console.log(Helpers.calcCircumference(5));
 
 
 
