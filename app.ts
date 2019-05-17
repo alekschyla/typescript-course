@@ -16,7 +16,7 @@ class OnlyOne {
 let right = OnlyOne.getInstance();
 console.log(right);
 console.log(right.name);
-right.name = 'Something else';
+//right.name = 'Something else';
 console.log(right.name);
 
 
