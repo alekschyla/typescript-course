@@ -1,39 +1,13 @@
-// Private Constructors
-class OnlyOne {
-    private static instance: OnlyOne;
-    private constructor (public readonly name: string) {}
+/// <reference path="circleMath.ts"/>
+/// <reference path="rectangleMath.ts"/>
 
-    static getInstance() {
-        if (!OnlyOne.instance) {
-            OnlyOne.instance = new OnlyOne('The Only One');
-        }
-        return OnlyOne.instance;
-    }
-}
+import CircleMath = MyMath.Circle;
 
+const PI = 2.44;
 
-//let wrong = new OnlyOne;
-let right = OnlyOne.getInstance();
-console.log(right);
-console.log(right.name);
-//right.name = 'Something else';
-console.log(right.name);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(MyMath.calculateRectangle(10, 20));
+console.log(CircleMath.calculateCircumference(3));
+console.log(PI);
 
 
 
