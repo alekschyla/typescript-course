@@ -1,55 +1,10 @@
-interface NamedPerson {
-    name: string;
-    age?: number;
-    [propName: string]: any;
-    greet(lastName: string): void;
+// Interfaces and function types
+interface DoubleValue {
+    (number1: number, number2: number): number;
 }
 
-function greet(person: NamedPerson): void {
-    console.log('Hello, ' + person.name);
-}
-
-function changeName(person: NamedPerson) {
-    person.name = "Anna";
-}
-
-const person1 = {
-    name: 'Ola',
-    hobbies: ['cooking', 'writing'],
-    greet(lastName: string) {
-        console.log('Hi, I am ' + this.name + ' ' + lastName);
-    }
+const doubleFunction: DoubleValue = (value1: number, value2: number) => {
+    return (value1 + value2) * 2;
 };
 
-// greet({name: 'Mary', age: 22});
-changeName(person1);
-greet(person1);
-person1.greet('Nowak');
-
-class PersonInterfaces implements NamedPerson {
-    name: string;
-    lastName: string;
-    greet(lastName: string) {
-        console.log('Hi, I am ' + this.name + ' ' + lastName);
-    }
-}
-
-const myPerson = new PersonInterfaces();
-myPerson.name = 'Kasia';
-myPerson.lastName = 'Kowalska';
-greet(myPerson);
-myPerson.greet(myPerson.lastName);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(doubleFunction(3, 5));
