@@ -40,7 +40,7 @@ console.log(echo2<string>("something"));
 
 
 // Generic Classes
-class SimpleMath<T> {
+class SimpleMath<T extends number | string> {
     baseValue: T;
     multiplyValue: T;
     calculate(): number {
@@ -48,9 +48,9 @@ class SimpleMath<T> {
     }
 }
 
-const simpleMath = new SimpleMath();
-simpleMath.baseValue = 10;
-simpleMath.multiplyValue = 20;
+const simpleMath = new SimpleMath<string>();
+simpleMath.baseValue = '10';
+simpleMath.multiplyValue = '20';
 console.log(simpleMath.calculate());
 
 
