@@ -1,32 +1,17 @@
-// Interfaces and function types
-interface DoubleValue {
-    (number1: number, number2: number): number;
+// Simple Generic
+function echo(data: any) {
+    return data;
 }
 
-const doubleFunction: DoubleValue = (value1: number, value2: number) => {
-    return (value1 + value2) * 2;
-};
+console.log(echo('Ola'));
+console.log(echo(24));
+console.log(echo({name: 'Ola', age: 24}));
 
-console.log(doubleFunction(3, 5));
-
-// Interface Inheritance
-interface NamedPerson {
-    name: string;
-    age?: number;
-    [propName: string]: any;
-    greet(lastName: string): void;
+// Better Generic
+function betterEcho<T>(data: T) {
+    return data;
 }
 
-interface AgedPerson extends NamedPerson {
-    age: number;
-}
-
-const oldPerson: AgedPerson = {
-    age: 89,
-    name: 'Kate',
-    greet(lastName: string): void {
-        console.log('Hello!');
-    }
-};
-console.log(oldPerson);
-oldPerson.greet('Smith');
+console.log(betterEcho('Ola').length);
+console.log(betterEcho<number>(24));
+console.log(betterEcho({name: 'Ola', age: 24}));
