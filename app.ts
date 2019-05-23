@@ -22,4 +22,16 @@ testResults.push(3.44);
 //testResults.push('test');  - wrong
 console.log(testResults);
 
-//
+// Generic Types and Arrays
+
+function printAll<T>(args: T[]) {
+    args.forEach(element => console.log(element));
+}
+printAll<string>(['apples', 'watermelon', 'oranges', 'strawberries']);
+
+
+
+
+
+
+
