@@ -9,7 +9,7 @@ console.log(echo({name: 'Ola', age: 24}));
 
 
 // Better Generic
-function betterEcho<T>(data: T) {
+function betterEcho<T>(data: T): T {
     return data;
 }
 
@@ -40,18 +40,19 @@ console.log(echo2<string>("something"));
 
 
 // Generic Classes
-class SimpleMath<T extends number | string> {
+class SimpleMath<T extends number | string, U extends number | string> {
     baseValue: T;
-    multiplyValue: T;
+    multiplyValue: U;
     calculate(): number {
         return +this.baseValue * +this.multiplyValue;
     }
 }
 
-const simpleMath = new SimpleMath<string>();
+const simpleMath = new SimpleMath<string, number>();
 simpleMath.baseValue = '10';
-simpleMath.multiplyValue = '20';
+simpleMath.multiplyValue = 20;
 console.log(simpleMath.calculate());
+
 
 
 
