@@ -4,8 +4,19 @@ function editable(value: boolean) {
     }
 }
 
+function overwritable(value: boolean): any {
+    return function (target: any, propName: string) {
+        const newDescriptor: PropertyDescriptor = {
+            writable: value
+        };
+        return newDescriptor;
+    }
+}
+
 class Project {
+    @overwritable(false)
     projectName: string;
+
     constructor(name: string) {
         this.projectName = name;
     }
@@ -22,3 +33,4 @@ project.calcBudget = function () {
     console.log(2000);
 };
 project.calcBudget();
+console.log(project);
